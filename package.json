@@ -1,0 +1,21 @@
+{
+  "name": "messengerbackend",
+  "engine": {
+    "node": ">=9.0.0"
+  },
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.3",
+    "debug": "^2.6.9",
+    "dotenv": "^5.0.1",
+    "ejs": "~2.6.1",
+    "express": "~4.16.3",
+    "facebook-chat-api": "github:Schmavery/facebook-chat-api",
+    "firebase-admin": "^5.12.1",
+    "morgan": "~1.9.0"
+  }
+}
