@@ -21,6 +21,6 @@ module.exports = new Promise(function(resolve, reject) {
       });
     });
   } catch (err) {
-    next(err);
+    reject(err);
   }
 });
