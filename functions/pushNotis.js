@@ -19,8 +19,9 @@ module.exports = async function(api) {
     } else if (!title && !threadInfo.isGroup) {
       let otherPerson = threadInfo.participantIDs[0];
       if (otherPerson === process.env.selfId) otherPerson = threadInfo.participantIDs[1];
-      title = await getUserInfo(api, otherPerson).name;
+      title = (await getUserInfo(api, otherPerson)).name;
     }
+    if (!title) title = 'Undefined';
 
     const payload = {
       data: {
@@ -40,7 +41,7 @@ module.exports = async function(api) {
         console.log('Successfully sent message:', response);
       })
       .catch(function(err) {
-        next(err);
+        throw err;
       });
   });
 };
